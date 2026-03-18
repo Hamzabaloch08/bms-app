@@ -41,7 +41,7 @@ export const updateProgress = createAsyncThunk('/progress/update', async ({ id, 
 export const getMyProgress = createAsyncThunk('/progress/my-progress',async(_,{rejectWithValue})=>{
     try {
         const response = await api.get('/progress/my-progress')
-        console.log(response.data)
+        console.log("my-progress response", response.data)
         return response.data
     }catch(error){
         console.log("Backend error data:", error.response?.data);

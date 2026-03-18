@@ -2,7 +2,7 @@ import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const api = axios.create({
-  baseURL: "https://bootcamp-lms-server.vercel.app",
+  baseURL: "https://hardheartedly-hypogenetic-charla.ngrok-free.dev",
 });
 
 api.interceptors.request.use(async (config) => {

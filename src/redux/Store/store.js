@@ -3,6 +3,7 @@ import authReducer from '../Slices/AuthSlice'
 import dailyProgressReducer from '../Slices/DailyProgressSlice'
 import assignmentReducer from '../Slices/AssignmentSlice'
 import announcementReducer from '../Slices/AnnouncementSlice'
+import notificationReducer from '../Slices/NotificationSlice'
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
     dailyProgress: dailyProgressReducer,
     assignments: assignmentReducer,
     announcements: announcementReducer,
+    notifications: notificationReducer,
   },
 })

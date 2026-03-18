@@ -1,5 +1,6 @@
 import { View, Text, FlatList, ActivityIndicator, Pressable } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useCallback } from 'react'
+import { useFocusEffect } from '@react-navigation/native'
 import { useDispatch, useSelector } from 'react-redux'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import ScreenHeader from '../../Components/ScreenHeader'
@@ -15,9 +16,14 @@ const ProgressHistory = ({ navigation }) => {
     const dispatch = useDispatch()
     const { progressList, loading } = useSelector(state => state.dailyProgress)
 
-    useEffect(() => {
-        dispatch(getMyProgress())
-    }, [])
+    console.log("ProgressHistory screen rendered")
+
+    useFocusEffect(
+        useCallback(() => {
+            console.log("ProgressHistory focused - fetching data")
+            dispatch(getMyProgress())
+        }, [dispatch])
+    )
 
     if (loading) {
         return (
